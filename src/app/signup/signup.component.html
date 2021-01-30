@@ -1,0 +1,94 @@
+<div class="container p-5">
+  <form [formGroup]="myForm" class="text-center border border-light p-5">
+    <p class="h4 mb-4">Sign up</p>
+
+    <div class="form-row mb-4">
+      <div class="col">
+        <input
+          type="text"
+          id="defaultRegisterFormFirstName"
+          class="form-control"
+          placeholder="First name"
+        />
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          id="defaultRegisterFormLastName"
+          class="form-control"
+          placeholder="Last name"
+        />
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <div class="col">
+        <input
+          type="text"
+          id="defaultRegisterFormFirstName"
+          class="form-control"
+          placeholder="Age"
+        />
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          id="defaultRegisterFormLastName"
+          class="form-control"
+          placeholder="Phone Number"
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col">
+        <select
+          class="browser-default custom-select mb-4"
+          formControlName="gender"
+        >
+          <option disabled>Choose Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          id="defaultRegisterFormLastName"
+          class="form-control"
+          placeholder="Email"
+        />
+      </div>
+    </div>
+
+    <input
+      type="password"
+      id="defaultRegisterFormPassword"
+      class="form-control mb-4"
+      placeholder="Password"
+      aria-describedby="defaultRegisterFormPasswordHelpBlock"
+    />
+
+    <div class="form-group">
+      <textarea
+        class="form-control rounded-0"
+        id="exampleFormControlTextarea2"
+        rows="3"
+        placeholder="Address"
+      ></textarea>
+    </div>
+
+
+    <button mdbBtn color="info" block="true" class="my-4" type="submit">
+      Submit
+    </button>
+
+    <p>
+      Already have an Account ?
+      <a [routerLink]="['/login']" routerLinkActive="router-link-active" href=""
+        >Login</a
+      >
+    </p>
+  </form>
+</div>
