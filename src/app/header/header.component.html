@@ -83,11 +83,21 @@
           </ul>
           <div class="link-btn text-center text-lg-right">
             <a
+              *ngIf="!isLoggedIn"
               [routerLink]="['/login']"
               routerLinkActive="router-link-active"
               class="btn-style-one"
               >Signup / Login</a
             >
+            <a
+              *ngIf="isLoggedIn"
+              [routerLink]="['/']"
+              routerLinkActive="router-link-active"
+              class="btn-style-one"
+              (click)="logout()"
+              >Logout</a
+            >
+
           </div>
         </div>
       </div>
@@ -115,13 +125,22 @@
             >Home</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isLoggedIn">
           <a
             class="nav-link waves-light ml-5"
             [routerLink]="['/service']"
             routerLinkActive="router-link-active"
             mdbWavesEffect
             >Service</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link waves-light ml-5"
+            [routerLink]="['/pet-care']"
+            routerLinkActive="router-link-active"
+            mdbWavesEffect
+            >Pet Care</a
           >
         </li>
         <li class="nav-item">
@@ -143,37 +162,16 @@
           >
         </li>
 
-        <!-- Dropdown -->
-        <li class="nav-item dropdown ml-5" dropdown>
+        <li class="nav-item">
           <a
-            dropdownToggle
+            class="nav-link waves-light ml-5"
+            [routerLink]="['/team']"
+            routerLinkActive="router-link-active"
             mdbWavesEffect
-            type="button"
-            class="nav-link dropdown-toggle waves-light"
-            mdbWavesEffect
+            >Team Members</a
           >
-            Basic dropdown<span class="caret"></span
-          ></a>
-          <div
-            *dropdownMenu
-            class="dropdown-menu dropdown dropdown-primary"
-            role="menu"
-          >
-            <a class="dropdown-item waves-light" mdbWavesEffect href="#"
-              >Action</a
-            >
-            <a class="dropdown-item waves-light" mdbWavesEffect href="#"
-              >Another action</a
-            >
-            <a class="dropdown-item waves-light" mdbWavesEffect href="#"
-              >Something else here</a
-            >
-            <div class="divider dropdown-divider"></div>
-            <a class="dropdown-item waves-light" mdbWavesEffect href="#"
-              >Separated link</a
-            >
-          </div>
         </li>
+
       </ul>
       <!-- Links -->
 

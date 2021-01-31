@@ -1,5 +1,9 @@
 <div class="container p-5">
-  <form [formGroup]="myForm" class="text-center border border-light p-5">
+  <form
+    [formGroup]="myForm"
+    (ngSubmit)="signup()"
+    class="text-center border border-light p-5"
+  >
     <p class="h4 mb-4">Sign up</p>
 
     <div class="form-row mb-4">
@@ -9,6 +13,7 @@
           id="defaultRegisterFormFirstName"
           class="form-control"
           placeholder="First name"
+          formControlName="firstname"
         />
       </div>
       <div class="col">
@@ -17,6 +22,7 @@
           id="defaultRegisterFormLastName"
           class="form-control"
           placeholder="Last name"
+          formControlName="lastname"
         />
       </div>
     </div>
@@ -28,6 +34,7 @@
           id="defaultRegisterFormFirstName"
           class="form-control"
           placeholder="Age"
+          formControlName="age"
         />
       </div>
       <div class="col">
@@ -36,6 +43,7 @@
           id="defaultRegisterFormLastName"
           class="form-control"
           placeholder="Phone Number"
+          formControlName="mobileno"
         />
       </div>
     </div>
@@ -46,10 +54,10 @@
           class="browser-default custom-select mb-4"
           formControlName="gender"
         >
-          <option disabled>Choose Gender</option>
-          <option>Male</option>
-          <option>Female</option>
-          <option>Other</option>
+          <option value="" disabled selected>Choose Gender</option>
+          <option value="2">Male</option>
+          <option value="3">Female</option>
+          <option value="4">Other</option>
         </select>
       </div>
       <div class="col">
@@ -57,6 +65,7 @@
           type="text"
           id="defaultRegisterFormLastName"
           class="form-control"
+          formControlName="email"
           placeholder="Email"
         />
       </div>
@@ -68,6 +77,7 @@
       class="form-control mb-4"
       placeholder="Password"
       aria-describedby="defaultRegisterFormPasswordHelpBlock"
+      formControlName="password"
     />
 
     <div class="form-group">
@@ -75,18 +85,28 @@
         class="form-control rounded-0"
         id="exampleFormControlTextarea2"
         rows="3"
+        formControlName="address"
         placeholder="Address"
       ></textarea>
     </div>
 
-
-    <button mdbBtn color="info" block="true" class="my-4" type="submit">
+    <button
+      mdbBtn
+      style="background: #febf01; color: white"
+      block="true"
+      class="my-4"
+      type="submit"
+    >
       Submit
     </button>
 
     <p>
       Already have an Account ?
-      <a [routerLink]="['/login']" routerLinkActive="router-link-active" href=""
+      <a
+        [routerLink]="['/login']"
+        style="color: #febf01"
+        routerLinkActive="router-link-active"
+        href=""
         >Login</a
       >
     </p>

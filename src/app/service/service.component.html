@@ -1,5 +1,5 @@
 <div class="container mt-5 mb-5">
-  <form class="text-center border border-light p-5">
+  <form [formGroup]="myForm" (ngSubmit)="submit()" class="text-center border border-light p-5">
     <p class="h4 mb-4">Service Form</p>
 
     <div class="form-row mb-4">
@@ -9,6 +9,7 @@
           id="defaultRegisterFormFirstName"
           class="form-control"
           placeholder="Name"
+          formControlName="username"
         />
       </div>
       <div class="col">
@@ -17,6 +18,7 @@
           id="defaultRegisterFormLastName"
           class="form-control"
           placeholder="Phone Number"
+          formControlName="mobileno"
         />
       </div>
     </div>
@@ -25,14 +27,19 @@
       type="email"
       id="defaultRegisterFormEmail"
       class="form-control mb-4"
-      placeholder="Type"
+      placeholder="Animal Type"
+      formControlName="animaltype"
     />
 
-    <select class="browser-default custom-select mb-4">
-      <option value="" selected>Choose Service</option>
-      <option value="2">Report a bug</option>
-      <option value="3">Feature request</option>
-      <option value="4">Feature request</option>
+    <select class="browser-default custom-select mb-4" formControlName="services">
+      <option value="" disabled selected>Choose Service</option>
+      <option value="HEALTH CARE">HEALTH CARE</option>
+      <option value="RESCUE">RESCUE</option>
+      <option value="DEAD BODY PICK-UP">DEAD BODY PICK-UP</option>
+      <option value="VACCINATION">VACCINATION</option>
+      <option value="PET ADOPTION">PET ADOPTION</option>
+      <option value="PET CARE">PET CARE</option>
+
     </select>
 
     <div class="form-group">
@@ -41,6 +48,7 @@
         id="exampleFormControlTextarea2"
         rows="3"
         placeholder="Address"
+        formControlName="address"
       ></textarea>
     </div>
 
@@ -50,10 +58,11 @@
         id="exampleFormControlTextarea2"
         rows="3"
         placeholder="Description"
+        formControlName="problem"
       ></textarea>
     </div>
 
-    <button mdbBtn color="info" block="true" class="my-4" type="submit">
+    <button mdbBtn style="background: #febf01; color: white;" block="true" class="my-4" type="submit">
       Submit
     </button>
 

@@ -1,5 +1,5 @@
 <div class="container p-5">
-  <form class="text-center border border-light p-5">
+  <form [formGroup]="myForm" (ngSubmit)="login()" class="text-center border border-light p-5">
     <p class="h4 mb-4">Log in</p>
 
     <input
@@ -7,6 +7,7 @@
       id="defaultLoginFormEmail"
       class="form-control mb-4"
       placeholder="E-mail"
+      formControlName="email"
     />
 
     <input
@@ -14,9 +15,10 @@
       id="defaultLoginFormPassword"
       class="form-control mb-4"
       placeholder="Password"
+      formControlName="password"
     />
 
-    <button mdbBtn color="info" block="true" class="my-4" type="submit">
+    <button mdbBtn style="background: #febf01; color: white;" block="true" class="my-4" type="submit">
       Sign in
     </button>
 
@@ -26,6 +28,7 @@
         [routerLink]="['/signup']"
         routerLinkActive="router-link-active"
         href=""
+        style="color: #febf01;"
         >Signup</a
       >
     </p>

@@ -13,6 +13,10 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { TeamComponent } from './team/team.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PetCareComponent } from './pet-care/pet-care.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +29,18 @@ import { AppointmentComponent } from './appointment/appointment.component';
     ContactusComponent,
     SignupComponent,
     LoginComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    TeamComponent,
+    PetCareComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
+
     MDBBootstrapModule.forRoot()
   ],
   providers: [],

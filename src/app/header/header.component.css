@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700|Source+Sans+Pro:400,600,700");
+
 .main{
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#febf01+0,febf01+100;Yellow+Flat */
 background: #febf01; /* Old browsers */
@@ -8,7 +10,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febf01', end
 
 }
 
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700|Source+Sans+Pro:400,600,700");
 body {
   line-height: 1.4;
   font-family: "Source Sans Pro", sans-serif;

@@ -137,8 +137,8 @@ li {
   color: #ffffff;
   line-height: 27px;
   padding: 8px 36px;
-  background: #febf01;
-  border: 1px solid #d3ae48;
+  background: #48bdc5;
+  border: 1px solid #48bdc5;
   display: inline-block;
   text-transform: uppercase;
   font-family: "Source Sans Pro", sans-serif;
@@ -150,9 +150,9 @@ li {
 }
 
 .btn-style-one:hover {
-  color: #febf01;
-  border: 1px solid #c2a039;
-  background: #febf01;
+  color: #48bdc5;
+  border: 1px solid #48bdc5;
+  background: #ffffff;
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -180,8 +180,8 @@ li {
 
 .btn-style-two:hover {
   color: #ffffff;
-  border: 1px solid #febf01;
-  background: #febf01;
+  border: 1px solid #48bdc5;
+  background: #48bdc5;
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -835,7 +835,7 @@ button:focus {
 }
 
 .contact .address-block .media i {
-  color: #febf01;
+  color: #48bdc5;
   font-size: 30px;
   margin-right: 35px;
   width: 40px;
@@ -2992,7 +2992,7 @@ button:focus {
   position: relative;
   background-size: cover;
   z-index: 1;
-  background: #132646;
+  background: #000;
 }
 
 .footer-main .footer-top {
@@ -3050,7 +3050,7 @@ button:focus {
   display: block;
   height: 40px;
   width: 40px;
-  color: #48bdc5;
+  color: #febf01;
   background: #fff;
   text-align: center;
   border-radius: 50%;
@@ -3178,7 +3178,7 @@ button:focus {
 
 .footer-bottom {
   padding: 24px 0px;
-  background: #0d1a2f;
+  background: #000;
 }
 
 .footer-bottom .copyright-text {
