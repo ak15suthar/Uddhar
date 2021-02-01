@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { AllserviceService } from '../allservice.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AllserviceService } from '../allservice.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private service: AllserviceService,private rut:Router) {}
+  constructor(private service: AllserviceService,private rut:Router,private messageService: MessageService) {}
 
   ngOnInit(): void {}
 
@@ -17,6 +18,8 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(){
+    this.messageService.add({severity:'success', summary: 'Success', detail:'User Logout Successfully!!'});
+
     sessionStorage.clear();
     this.rut.navigate(['/']);
   }

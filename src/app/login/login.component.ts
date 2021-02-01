@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { AllserviceService } from '../allservice.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { AllserviceService } from '../allservice.service';
 export class LoginComponent implements OnInit {
   myForm: FormGroup;
 
-  constructor(private service: AllserviceService,private router:Router) {}
+  constructor(private service: AllserviceService,private router:Router,private messageService: MessageService) {}
 
   ngOnInit(): void {
     this.myForm = new FormGroup({
@@ -23,19 +24,23 @@ export class LoginComponent implements OnInit {
   login() {
     if(this.myForm.valid){
       this.service.login(this.myForm.value).subscribe(res => {
-        //console.log(res.status);
 
-        if(res.msg == "User Login"){
+        if(res.status == 200){
           sessionStorage.setItem("isLogin","true");
-          console.log(res.status);
-          console.log(res);
+          // console.log(res);
           this.router.navigate(['/'])
-          console.log();
+          this.messageService.add({severity:'success', summary: 'Success', detail: res.msg});
+
         }
         else{
-          console.log("error");
+          // console.log(res);
+          this.messageService.add({severity:'error', summary: 'Error', detail:'User Not Found!!'});
         }
       });
+    }
+    else{
+      this.messageService.add({severity:'info', summary: 'Info', detail:'Please Enter Credentials!!'});
+
     }
 
   }
