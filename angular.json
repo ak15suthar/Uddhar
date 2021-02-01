@@ -36,13 +36,6 @@
               "node_modules/jquery/dist/jquery.min.js"
             ]
           },
-          "budgets": [
-            {
-               "type": "initial",
-               "maximumWarning": "2mb",
-               "maximumError": "5mb"
-            }
-         ],
           "configurations": {
             "production": {
               "fileReplacements": [
@@ -67,8 +60,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 }
               ]
             }
